@@ -4,3 +4,29 @@
 
 ## 目前已经支持的传感器
 1. 距离传感器
+
+
+## How to use
+1. import `UnitySensorPlugin.unitypackage `
+
+2. Create Script
+
+Example:
+
+``` csharp
+
+Text mText ;
+void Start () {
+	mText  = GetComponent<Text>();
+	SensorManager.Instance.getProximityValue((value)=>{
+			if(value ==0){
+				Debug.Log("proximity");
+				mText.text = "proximity";
+			}else{
+				Debug.Log("normal");
+				mText.text = "normal";
+			}
+	});
+}
+
+```
